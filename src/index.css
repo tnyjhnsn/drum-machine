@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #c2c3c5;
+  color: #343a40;
+}
+
+#drum-machine {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 80px 250px;
+  grid-template-areas: 
+    ". display ."
+    ". kit .";
+}
+
+#display {
+  grid-area: display;
+  justify-self: center;
+  align-self: center;
+  font-size: 24px;
+}
+
+#kit {
+  grid-area: kit;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+}
+
+.drum-pad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #343a40;
+  border: solid 1px gray;
+  border-radius: 10%; 
+  font-size: 24px;
+  color: #c2c3c5;
+}
