@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from 'react'
 import DrumPad from './DrumPad'
 
 import boom from './sounds/boom.wav'
@@ -24,40 +24,34 @@ let sounds = [
 ]
 
 class App extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
-      display: 'Press the keys to play the drums!'
+      display: 'Press the keys to play the drums!',
     }
   }
 
   setDisplay = label => {
     this.setState({
-      display: label
+      display: label,
     })
   }
 
   render() {
     const kit = sounds.map(sound => {
-      return <DrumPad
-                key={sound.label}
-                id={sound.id}
-                code={sound.code}
-                label={sound.label}
-                audio={sound.audio}
-                setDisplay={this.setDisplay}
-                />
+      return (
+        <DrumPad key={sound.label} setDisplay={this.setDisplay} {...sound} />
+      )
     })
     return (
       <Fragment>
-        <div id="display" className="App">{this.state.display}</div>
-        <div id="kit">
-          {kit}
+        <div id="display" className="App">
+          {this.state.display}
         </div>
+        <div id="kit">{kit}</div>
       </Fragment>
     )
   }
 }
 
-export default App;
+export default App

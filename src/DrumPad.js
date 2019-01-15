@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 class DrumPad extends Component {
-
   constructor(props) {
     super(props)
     this.audioRef = React.createRef()
@@ -21,9 +20,9 @@ class DrumPad extends Component {
   }
 
   render() {
-    let { id, label, audio } = this.props
+    let { label, audio } = this.props
     return (
-      <div id={id} className="drum-pad" onClick={e => this.playSound(e)}>
+      <div className="drum-pad" onClick={e => this.playSound(e)}>
         {label}
         <audio id={label} className="clip" ref={this.audioRef} src={audio} />
       </div>
